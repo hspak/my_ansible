@@ -1,0 +1,8 @@
+- name: install my tools
+  become: true
+  package: >
+    name={{ item }}
+    state=latest
+  with_items:
+    - vim
+    - tmux

@@ -1,0 +1,2 @@
+- include: manual.yml
+- include: vars.yml

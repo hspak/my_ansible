@@ -1,0 +1,6 @@
+- name: download golang tarball
+  become: yes
+  unarchive: >
+    src=https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
+    dest=/usr/local/
+    copy=no

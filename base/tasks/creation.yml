@@ -1,0 +1,13 @@
+- name: create my user
+  become: true
+  user: >
+    name={{ username }}
+    groups=adm,wheel,systemd-journal
+
+- name: I have the powah
+  become: true
+  lineinfile: "dest=/etc/sudoers state=present regexp='^hsp' line='hsp ALL=(ALL) NOPASSWD: ALL'"
+
+- name: ec2-user no more powah
+  become: true
+  lineinfile: "dest=/etc/sudoers state=absent regexp='^ec2-user' line='ec2-user ALL=(ALL) NOPASSWD: ALL'"

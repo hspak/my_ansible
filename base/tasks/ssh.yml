@@ -1,0 +1,13 @@
+- name: ensure .ssh directory is present
+  become: true
+  become_user: "{{ username }}"
+  file: >
+    path=/home/{{ username }}/.ssh
+    state=directory
+
+- name: setup ssh public key
+  become: true
+  become_user: "{{ username }}"
+  copy: >
+    src=id_rsa.pub
+    dest=/home/{{ username }}/.ssh/authorized_keys

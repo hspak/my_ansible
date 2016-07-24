@@ -1,0 +1,6 @@
+- name: setup golang environment vars
+  become: true
+  copy: >
+    src=golang.sh
+    dest=/etc/profile.d/golang.sh
+    mode=0755
