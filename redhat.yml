@@ -1,0 +1,5 @@
+- hosts: redhat
+  remote_user: ec2-user
+  roles:
+    - role: base
+    - role: golang
